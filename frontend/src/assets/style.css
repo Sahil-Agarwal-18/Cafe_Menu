@@ -1,100 +1,253 @@
-/*
-Common
-************************************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-html,
-body {
-  height: 100%;
-  font-family: sans-serif;
-}
-
-.content {
-  width: 600px;
-  height: 100%;
-  margin: 0 auto;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-}
-
-@media screen and (max-width: 500px) {
-}
-
-/*
-Posts
-************************************/
-
-.post_form {
-  padding: 20px 40px;
-  border-bottom: 1px solid #ccc;
-}
-
-.post_form input {
-  width: 70%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-.post_form textarea {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-.posts ul {
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: inherit;
 }
 
-.posts li {
-  position: relative;
-  display: flex;
-  border-bottom: 1px solid #ccc;
-  padding: 20px 40px;
-  list-style: none;
+:root {
+  --fw-bold: 10000;
 }
 
-.posts li .menu_icon {
-  width: 20px;
-  position: absolute;
-  right: 30px;
-  top: 18px;
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.posts li .menu {
-  position: absolute;
-  top: 40px;
-  right: 15px;
-  border: 1px solid #ccc;
-  background-color: white;
-  padding: 10px 15px;
-  font-size: 13px;
-  border-radius: 3px;
-}
-
-.posts li img {
+.long--image {
   width: 100%;
+  /* height: 10%;
+    This obviously will not do much */
+  height: 300px;
+}
+.order {
+  padding: 0.4em;
+  font-size: 25px;
+  font-weight: var(--fw-bold);
 }
 
-.posts li .menu a {
-  text-decoration: none;
+.description {
+  padding-left: 0.8em;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.posts li .logo {
-  flex-basis: 15%;
+[data-tab-content] {
+  display: none;
 }
 
-.posts li .logo img {
-  width: 60%;
+.active[data-tab-content] {
+  display: block;
 }
 
-.posts li .name_body {
-  flex-basis: 85%;
+.tab {
+  /* padding-right: 1em; */
+  /*This just unnecessarily increases the background space*/
+  background: #222;
+  color: white;
+  font-size: 25px;
+  margin-right: 2rem;
+  padding: 0.75rem;
+  line-height: 10px;
+  border-radius: 3px;
+  font-family: "Roboto", sans-serif;
+}
+.active {
+  /* padding-left: 1em; 
+    Not what should be done*/
+  margin-left: 0.7em;
 }
 
-.posts li .name_body .name {
+.tab:hover {
+  background: #a89158;
+}
+
+.items {
+  display: block;
+  height: 300px;
+  width: 400px;
+}
+/* 
+Nope this does something completely different
+.active{
+  padding-bottom: 2.5em;
+} */
+
+.active li {
+  padding-bottom: 2em;
+}
+
+.second li {
+  padding-bottom: 2em;
+}
+
+.third li {
+  padding-bottom: 2em;
+}
+
+.fourth li {
+  padding-bottom: 2em;
+}
+
+.fifth li {
+  padding-bottom: 2em;
+}
+
+.tab-content li {
+  display: flex;
+  /* border-bottom: 1px solid; 
+  Not required in this design */
+  position: relative;
+}
+
+.tab-content li p {
+  font-size: 25px;
+  font-weight: var(--fw-bold); /*Not Working and stuff*/
+  margin-left: 1em;
+}
+
+/* .tab-content i {
+  position: absolute;
+  left: 430px;
+  top: 38px;
+  font-size: 25px;
+} */
+.tab-content i:hover {
+  color: #066bd1;
+}
+
+.price {
+  position: absolute;
+  left: 400px;
+  top: 250px;
+}
+.likes {
+  position: absolute;
+  left: 440px;
+  top: 50px;
+}
+
+.add {
+  position: absolute;
+  left: 1200px;
+  top: 240px;
+  background-color: white;
+  width: 70px;
+  height: 35px;
+  font-size: 18px !important;
+  /* This is not required
+  padding-left: 2em;
+  padding-right: 2em; */
+}
+.reviews {
+  color: #38a1ed;
+  /* Not working for some reason
+  font-size: 10px; !important; */
+  font-size: 18px !important;
+  position: absolute;
+  font-weight: bold !important;
+}
+.check {
+  left: 600px;
+  top: 100px;
+}
+.write {
+  left: 740px;
+  top: 100px;
+}
+
+.like {
+  height: 65px;
+  width: 105px;
+  padding-left: 0em;
+  position: absolute;
+  top: 75px;
+  left: 430px;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+.like i {
+  font-size: 35px;
+  position: absolute;
+  left: 10px;
+  top: 1px;
+  /* padding-top: 0em; */
+}
+.like .likes {
+  left: 26px;
+  top: 25px;
+}
+.ends {
+  position: relative;
+  /* padding: 0.8em; */
+  margin-top: 0.8em;
+}
+.checkout {
+  font-size: 20px;
+  color: white;
+  background-color: #222;
+  padding: 0.55em;
+  position: absolute;
+  left: 1050px;
+  /* bottom: 0.0001px;  */
+  /* margin-bottom: 1em; 
+  This will not do anything*/
+}
+
+.subtotal {
+  font-size: 25px;
+  color: black;
+  position: absolute;
+  left: 855px;
+  top: 10px;
   font-weight: bold;
 }
 
-.posts li .name_body .datetime {
-  color: gray;
+.end_first_page {
+  border-bottom: 0.65px solid gray;
+  padding-bottom: 0.1em !important;
+}
+
+.container {
+  height: 100%;
+  /* This does not do anything
+  padding: 0; */
+}
+
+.plus {
+  background-color: white;
+  color: #222;
+  border: 0.5px solid #222;
+  font-size: 20px;
+  width: 25px;
+  height: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.minus {
+  background-color: white;
+  color: #222;
+  border: 0.5px solid #222;
+  font-size: 20px;
+  width: 25px;
+  height: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.amount {
+  width: 60px;
+  height: 30px;
+  background-color: white;
+  color: #222;
+  text-align: center;
+  font-size: 20px;
+  border: 0.5px solid #222;
 }
