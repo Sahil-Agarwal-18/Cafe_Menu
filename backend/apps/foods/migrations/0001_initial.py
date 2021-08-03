@@ -13,18 +13,18 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Post',
+            name='Food',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(db_index=True, default='Anonymous', max_length=14, verbose_name='Name')),
-                ('body', models.CharField(db_index=True, max_length=140, verbose_name='Body')),
+                ('price', models.CharField(db_index=True, max_length=4, verbose_name='Price')),
                 ('image', cloudinary.models.CloudinaryField(blank=True, max_length=255, null=True, verbose_name='image')),
-                ('like_count', models.PositiveIntegerField(blank=True, default=0, verbose_name='Like Count')),
+                ('status', models.PositiveIntegerField(blank=True, default=0, max_length = 15, verbose_name='Like Count')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created Datetime')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated Datetime')),
             ],
             options={
-                'db_table': 'post',
+                'db_table': 'food',
             },
         ),
     ]
